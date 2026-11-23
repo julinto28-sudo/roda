@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "models": [
     {
@@ -168,4 +169,176 @@
       ]
     }
   ]
+=======
+{
+  "models": [
+    {
+      "id": "honda-pcx160-2022",
+      "brand": "Honda",
+      "model": "PCX160",
+      "year": 2022,
+      "type": "matic",
+      "manualSource": "Honda MotoPub Indonesia",
+      "manualUrl": "https://www.hondamotopub.com/om/AHJ/PCX160/2022",
+      "scheduleVerified": true,
+      "services": [
+        { "id": "oil", "name": "Oli mesin", "icon": "\ud83d\udee2\ufe0f", "interval": 6000, "initialInterval": 1000, "manualInterval": true },
+        { "id": "air-filter", "name": "Filter udara", "icon": "\ud83c\udf2c\ufe0f", "interval": 18000, "manualInterval": true },
+        { "id": "spark-plug", "name": "Busi", "icon": "\u26a1", "interval": 12000, "manualInterval": true },
+        { "id": "gear-oil", "name": "Oli gardan", "icon": "\u2699\ufe0f", "interval": 12000, "manualInterval": true },
+        { "id": "v-belt", "name": "V-belt", "icon": "\u3030\ufe0f", "interval": 24000, "manualInterval": true }
+      ]
+    },
+    {
+      "id": "honda-pcx150-2020",
+      "brand": "Honda",
+      "model": "PCX 150",
+      "year": 2020,
+      "type": "matic",
+      "manualSource": "Honda MotoPub Indonesia",
+      "manualUrl": "https://www.hondamotopub.com/om/AHJ/PCX150/2020",
+      "scheduleVerified": true,
+      "services": [
+        { "id": "oil", "name": "Oli mesin", "icon": "\ud83d\udee2\ufe0f", "interval": 6000, "initialInterval": 1000, "manualInterval": true },
+        { "id": "air-filter", "name": "Filter udara", "icon": "\ud83c\udf2c\ufe0f", "interval": 18000, "manualInterval": true },
+        { "id": "spark-plug", "name": "Busi", "icon": "\u26a1", "interval": 12000, "manualInterval": true },
+        { "id": "gear-oil", "name": "Oli gardan", "icon": "\u2699\ufe0f", "interval": 12000, "manualInterval": true },
+        { "id": "v-belt", "name": "V-belt", "icon": "\u3030\ufe0f", "interval": 24000, "manualInterval": true }
+      ]
+    },
+    {
+      "id": "honda-vario125-2023",
+      "brand": "Honda",
+      "model": "Vario 125",
+      "year": 2023,
+      "type": "matic",
+      "manualSource": "Honda MotoPub Indonesia",
+      "manualUrl": "https://www.hondamotopub.com/om/AHJ/Vario125/2023",
+      "scheduleVerified": true,
+      "services": [
+        { "id": "oil", "name": "Oli mesin", "icon": "\ud83d\udee2\ufe0f", "interval": 4000, "initialInterval": 1000, "manualInterval": true },
+        { "id": "air-filter", "name": "Filter udara", "icon": "\ud83c\udf2c\ufe0f", "interval": 16000, "manualInterval": true },
+        { "id": "spark-plug", "name": "Busi", "icon": "\u26a1", "interval": 8000, "manualInterval": true },
+        { "id": "gear-oil", "name": "Oli gardan", "icon": "\u2699\ufe0f", "interval": 8000, "manualInterval": true },
+        { "id": "v-belt", "name": "V-belt", "icon": "\u3030\ufe0f", "interval": 24000, "manualInterval": true }
+      ]
+    },
+    {
+      "id": "honda-beat-2023",
+      "brand": "Honda",
+      "model": "BeAT eSP / Street",
+      "year": 2023,
+      "type": "matic",
+      "manualSource": "Honda MotoPub Indonesia",
+      "manualUrl": "https://www.hondamotopub.com/om/AHJ/BeAT/2023",
+      "scheduleVerified": true,
+      "services": [
+        { "id": "oil", "name": "Oli mesin", "icon": "\ud83d\udee2\ufe0f", "interval": 4000, "initialInterval": 1000, "manualInterval": true },
+        { "id": "air-filter", "name": "Filter udara", "icon": "\ud83c\udf2c\ufe0f", "interval": 16000, "manualInterval": true },
+        { "id": "spark-plug", "name": "Busi", "icon": "\u26a1", "interval": 8000, "manualInterval": true },
+        { "id": "gear-oil", "name": "Oli gardan", "icon": "\u2699\ufe0f", "interval": 8000, "manualInterval": true },
+        { "id": "v-belt", "name": "V-belt", "icon": "\u3030\ufe0f", "interval": 24000, "manualInterval": true }
+      ]
+    },
+    {
+      "id": "honda-scoopy-2023",
+      "brand": "Honda",
+      "model": "Scoopy",
+      "year": 2023,
+      "type": "matic",
+      "manualSource": "Honda MotoPub Indonesia",
+      "manualUrl": "https://www.hondamotopub.com/om/AHJ/Scoopy/2023",
+      "scheduleVerified": true,
+      "services": [
+        { "id": "oil", "name": "Oli mesin", "icon": "\ud83d\udee2\ufe0f", "interval": 4000, "initialInterval": 1000, "manualInterval": true },
+        { "id": "air-filter", "name": "Filter udara", "icon": "\ud83c\udf2c\ufe0f", "interval": 16000, "manualInterval": true },
+        { "id": "spark-plug", "name": "Busi", "icon": "\u26a1", "interval": 8000, "manualInterval": true },
+        { "id": "gear-oil", "name": "Oli gardan", "icon": "\u2699\ufe0f", "interval": 8000, "manualInterval": true },
+        { "id": "v-belt", "name": "V-belt", "icon": "\u3030\ufe0f", "interval": 24000, "manualInterval": true }
+      ]
+    },
+    {
+      "id": "honda-suprax125-2022",
+      "brand": "Honda",
+      "model": "Supra X 125",
+      "year": 2022,
+      "type": "chain",
+      "manualSource": "Honda MotoPub Indonesia",
+      "manualUrl": "https://www.hondamotopub.com/om/AHJ/SupraX125/2022",
+      "scheduleVerified": true,
+      "services": [
+        { "id": "oil", "name": "Oli mesin", "icon": "\ud83d\udee2\ufe0f", "interval": 4000, "initialInterval": 1000, "manualInterval": true },
+        { "id": "air-filter", "name": "Filter udara", "icon": "\ud83c\udf2c\ufe0f", "interval": 16000, "manualInterval": true },
+        { "id": "spark-plug", "name": "Busi", "icon": "\u26a1", "interval": 8000, "manualInterval": true },
+        { "id": "chain", "name": "Rantai & gir", "icon": "\ud83d\udd17", "interval": 1000, "manualInterval": true }
+      ]
+    },
+    {
+      "id": "yamaha-nmax155-2024",
+      "brand": "Yamaha",
+      "model": "NMAX 155",
+      "year": 2024,
+      "type": "matic",
+      "manualSource": "Yamaha Owner's Manual Library",
+      "manualUrl": "https://library.ymcapps.net/library/om/contents/pdf/10/B6H-F8199-BB_07.pdf",
+      "scheduleVerified": true,
+      "services": [
+        { "id": "oil", "name": "Oli mesin", "icon": "\ud83d\udee2\ufe0f", "interval": 4000, "initialInterval": 1000, "manualInterval": true },
+        { "id": "air-filter", "name": "Filter udara", "icon": "\ud83c\udf2c\ufe0f", "interval": 12000, "manualInterval": true },
+        { "id": "gear-oil", "name": "Oli gardan", "icon": "\u2699\ufe0f", "interval": 12000, "initialInterval": 1000, "manualInterval": true },
+        { "id": "v-belt", "name": "V-belt", "icon": "\u3030\ufe0f", "interval": 25000, "manualInterval": true }
+      ]
+    },
+    {
+      "id": "yamaha-aerox155-2023",
+      "brand": "Yamaha",
+      "model": "Aerox 155 Connected",
+      "year": 2023,
+      "type": "matic",
+      "manualSource": "Yamaha Owner's Manual Library",
+      "manualUrl": "https://library.ymcapps.net/library/om/",
+      "scheduleVerified": true,
+      "services": [
+        { "id": "oil", "name": "Oli mesin", "icon": "\ud83d\udee2\ufe0f", "interval": 4000, "initialInterval": 1000, "manualInterval": true },
+        { "id": "air-filter", "name": "Filter udara", "icon": "\ud83c\udf2c\ufe0f", "interval": 12000, "manualInterval": true },
+        { "id": "spark-plug", "name": "Busi", "icon": "\u26a1", "interval": 6000, "manualInterval": true },
+        { "id": "gear-oil", "name": "Oli gardan", "icon": "\u2699\ufe0f", "interval": 12000, "initialInterval": 1000, "manualInterval": true },
+        { "id": "v-belt", "name": "V-belt", "icon": "\u3030\ufe0f", "interval": 25000, "manualInterval": true }
+      ]
+    },
+    {
+      "id": "yamaha-fazzio-2023",
+      "brand": "Yamaha",
+      "model": "Fazzio / Grand Filano 125",
+      "year": 2023,
+      "type": "matic",
+      "manualSource": "Yamaha Owner's Manual Library",
+      "manualUrl": "https://library.ymcapps.net/library/om/",
+      "scheduleVerified": true,
+      "services": [
+        { "id": "oil", "name": "Oli mesin", "icon": "\ud83d\udee2\ufe0f", "interval": 4000, "initialInterval": 1000, "manualInterval": true },
+        { "id": "air-filter", "name": "Filter udara", "icon": "\ud83c\udf2c\ufe0f", "interval": 12000, "manualInterval": true },
+        { "id": "spark-plug", "name": "Busi", "icon": "\u26a1", "interval": 6000, "manualInterval": true },
+        { "id": "gear-oil", "name": "Oli gardan", "icon": "\u2699\ufe0f", "interval": 12000, "initialInterval": 1000, "manualInterval": true },
+        { "id": "v-belt", "name": "V-belt", "icon": "\u3030\ufe0f", "interval": 25000, "manualInterval": true }
+      ]
+    },
+    {
+      "id": "yamaha-mxking150-2022",
+      "brand": "Yamaha",
+      "model": "MX King 150",
+      "year": 2022,
+      "type": "chain",
+      "manualSource": "Yamaha Owner's Manual Library",
+      "manualUrl": "https://library.ymcapps.net/library/om/",
+      "scheduleVerified": true,
+      "services": [
+        { "id": "oil", "name": "Oli mesin", "icon": "\ud83d\udee2\ufe0f", "interval": 3000, "initialInterval": 1000, "manualInterval": true },
+        { "id": "air-filter", "name": "Filter udara", "icon": "\ud83c\udf2c\ufe0f", "interval": 12000, "manualInterval": true },
+        { "id": "spark-plug", "name": "Busi", "icon": "\u26a1", "interval": 6000, "manualInterval": true },
+        { "id": "chain", "name": "Rantai & gir", "icon": "\ud83d\udd17", "interval": 1000, "manualInterval": true }
+      ]
+    }
+  ]
+>>>>>>> 0913f59421c7026ff23e498a98e95e93bd924213
 }

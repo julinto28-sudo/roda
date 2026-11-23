@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "id": "https://julinto28-sudo.github.io/roda/",
   "name": "Roda — Perawatan Motor",
@@ -18,3 +19,25 @@
     }
   ]
 }
+=======
+{
+  "id": "https://julinto28-sudo.github.io/roda/",
+  "name": "Roda — Perawatan Motor",
+  "short_name": "Roda",
+  "description": "Pantau odometer dan jadwal servis motormu.",
+  "lang": "id",
+  "start_url": "https://julinto28-sudo.github.io/roda/",
+  "scope": "https://julinto28-sudo.github.io/roda/",
+  "display": "standalone",
+  "background_color": "#101820",
+  "theme_color": "#101820",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
+>>>>>>> 0913f59421c7026ff23e498a98e95e93bd924213
