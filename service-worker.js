@@ -1,4 +1,4 @@
-const CACHE_NAME = "roda-v43";
+const CACHE_NAME = "roda-v44";
 const APP_FILES = ["./", "./index.html", "./styles.css", "./app.js", "./manifest.json", "./icon.svg", "./vehicle-catalog.json", "./motorcycle-silhouette.svg"];
 
 self.addEventListener("install", event => {

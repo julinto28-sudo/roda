@@ -1,4 +1,4 @@
-const APP_VERSION = "1.0.0";
+const APP_VERSION = "1.1.0";
 const STORAGE_KEY = "roda-maintenance-v2";
 const THEME_STORAGE_KEY = "roda-theme";
 const VEHICLE_TYPES = ["matic", "chain", "unknown"];
@@ -99,6 +99,7 @@ const motorNameInput = document.querySelector("#motor-name");
 const motorTypeInput = document.querySelector("#motor-type");
 const setupOdoInput = document.querySelector("#setup-odo");
 const correctInitialOdoButton = document.querySelector("#correct-initial-odo-button");
+const correctLastOdoButton = document.querySelector("#correct-last-odo-button");
 const odometerCorrectionDialog = document.querySelector("#odometer-correction-dialog");
 const odometerCorrectionForm = document.querySelector("#odometer-correction-form");
 const initialOdoCorrectionInput = document.querySelector("#initial-odo-correction");
@@ -541,6 +542,7 @@ function render() {
     : "Interval contoh. Cocokkan dengan buku manual motor.";
   currentOdo.textContent = formatKm(state.odometer);
   correctInitialOdoButton.hidden = !canCorrectInitialOdometer();
+  correctLastOdoButton.hidden = !canCorrectLastOdometer();
   renderNextService();
   renderServices();
   renderHistory();
@@ -556,6 +558,54 @@ function getVehicleTypeLabel(type) {
 
 function canCorrectInitialOdometer() {
   return state.odometerLog.length === 1 && state.history.length === 0;
+}
+function canCorrectLastOdometer() {
+  return state.odometerLog.length >= 2;
+}
+function getLastOdometerCorrectionBlocker(value) {
+  const previousOdometer = state.odometerLog[state.odometerLog.length - 2].odometer;
+  if (value <= previousOdometer) return `Odometer harus lebih besar dari update sebelumnya (${formatKm(previousOdometer)} km).`;
+  const historyItem = state.history.find(item => item.odometer > value);
+  if (historyItem) return `Catatan ${historyItem.name} di ${formatKm(historyItem.odometer)} km melewati nilai ini. Ubah odometer catatan itu lewat tombol Edit di Riwayat, lalu koreksi lagi.`;
+  const service = state.services.find(item => item.lastAt !== state.odometer && item.lastAt > value);
+  if (service) return `Odometer tidak boleh lebih kecil dari servis terakhir ${service.name} di ${formatKm(service.lastAt)} km.`;
+  return null;
+}
+function openLastOdometerCorrection() {
+  if (!canCorrectLastOdometer()) return;
+  const previousEntryOdometer = state.odometerLog[state.odometerLog.length - 2].odometer;
+  const answer = window.prompt(`Koreksi odometer terakhir. Nilai sekarang ${formatKm(state.odometer)} km, harus lebih dari ${formatKm(previousEntryOdometer)} km. Tanggal catatan tidak berubah.`, String(state.odometer));
+  if (answer === null) return;
+  const text = answer.trim();
+  const value = /^\d+$/.test(text) ? Number(text) : NaN;
+  if (!Number.isSafeInteger(value)) {
+    window.alert("Masukkan odometer berupa bilangan bulat 0 atau lebih.");
+    return;
+  }
+  if (value === state.odometer) {
+    window.alert("Angkanya sama dengan catatan saat ini.");
+    return;
+  }
+  const blocker = getLastOdometerCorrectionBlocker(value);
+  if (blocker) {
+    window.alert(`Koreksi ditolak. ${blocker}`);
+    return;
+  }
+  const oldOdometer = state.odometer;
+  const previousLog = state.odometerLog;
+  const movedServices = state.services.filter(service => service.lastAt > 0 && service.lastAt === oldOdometer);
+  state.odometer = value;
+  state.odometerLog = [...previousLog.slice(0, -1), { ...previousLog[previousLog.length - 1], odometer: value }];
+  movedServices.forEach(service => { service.lastAt = value; });
+  if (!saveState()) {
+    state.odometer = oldOdometer;
+    state.odometerLog = previousLog;
+    movedServices.forEach(service => { service.lastAt = oldOdometer; });
+    return;
+  }
+  odoFeedback.textContent = `Odometer terakhir dikoreksi ke ${formatKm(value)} km.`;
+  render();
+  showToast("Odometer terakhir berhasil dikoreksi.");
 }
 
 function showToast(message, action = null) {
@@ -927,6 +977,7 @@ document.querySelector("#odo-form").addEventListener("submit", event => {
   showToast("Odometer berhasil diperbarui.");
 });
 
+correctLastOdoButton.addEventListener("click", openLastOdometerCorrection);
 correctInitialOdoButton.addEventListener("click", () => {
   if (!canCorrectInitialOdometer()) return;
   initialOdoCorrectionInput.value = String(state.odometer);
