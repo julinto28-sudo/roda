@@ -214,7 +214,7 @@ function formatDate(date) {
 }
 
 function getServiceLastDate(service) {
-  return service.lastDate || state.history.find(item => item.id === service.id)?.date;
+  return state.history.find(item => item.id === service.id)?.date || service.lastDate;
 }
 
 function formatServiceLastChanged(service) {
@@ -478,7 +478,7 @@ async function sendBrowserNotification(title, options) {
 
 function checkServiceReminders() {
   if (!state.vehicle || !state.remindersEnabled || !("Notification" in window) || Notification.permission !== "granted") return;
-  state.services.forEach(service => {
+  getVisibleServices().forEach(service => {
     const { dueAt, remaining } = getServiceStatus(service);
     const level = remaining <= 0 ? "overdue" : remaining <= 300 ? "soon" : null;
     if (!level) return;

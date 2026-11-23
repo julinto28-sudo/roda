@@ -28,6 +28,11 @@ http.createServer((request, response) => {
   }
 
   const relativePath = pathname === "/" ? "index.html" : pathname.slice(1);
+  const allowedFiles = new Set(["index.html", "styles.css", "app.js", "manifest.json", "service-worker.js", "icon.svg", "vehicle-catalog.json", "motorcycle-silhouette.svg"]);
+  if (!allowedFiles.has(relativePath)) {
+    response.writeHead(404).end("Not found");
+    return;
+  }
   const filePath = path.resolve(root, relativePath);
   if (!filePath.startsWith(root + path.sep)) {
     response.writeHead(403).end("Forbidden");
